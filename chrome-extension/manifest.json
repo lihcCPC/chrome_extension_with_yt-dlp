@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "YT-DLP Native Downloader",
+  "version": "1.0.0",
+  "description": "Download current tab video via native yt-dlp host",
+  "permissions": [
+    "activeTab",
+    "nativeMessaging",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

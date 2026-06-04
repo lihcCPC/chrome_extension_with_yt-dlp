@@ -1,0 +1,9 @@
+{
+  "name": "com.ytdlp.downloader",
+  "description": "Native host for launching yt-dlp downloads",
+  "path": "C:\\path\\to\\chrome_extension_with_yt-dlp\\native-host\\host.py",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://__REPLACE_WITH_YOUR_EXTENSION_ID__/"
+  ]
+}
