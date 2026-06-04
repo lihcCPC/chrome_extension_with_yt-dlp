@@ -15,6 +15,7 @@ chrome_extension_with_yt-dlp/
 │  └─ background.js
 └─ native-host/
    ├─ host.py
+   ├─ run_host.bat
    ├─ host_manifest.json
    └─ install.bat
 ```
@@ -44,6 +45,11 @@ chrome_extension_with_yt-dlp/
 - 用 `subprocess.Popen(['yt-dlp', url], cwd=Downloads)` 背景啟動下載
 - 透過 stdout 回傳 JSON 給擴充功能
 
+### 5.1) `native-host/run_host.bat`
+- Windows 上 Chrome Native Messaging 只能啟動 `.exe`/`.bat`/`.cmd`
+- 此檔為包裝器，呼叫 `python host.py`
+- `host_manifest.json` 的 `path` 必須指向此檔案
+
 ### 6) `native-host/host_manifest.json`
 - Native Messaging host 設定檔
 - 請手動更新：
@@ -58,7 +64,7 @@ chrome_extension_with_yt-dlp/
 
 1. **準備 Native Host 設定**
    - 編輯 `native-host/host_manifest.json`
-   - 將 `path` 改成 `host.py` 的絕對路徑
+   - 將 `path` 改成 `run_host.bat` 的絕對路徑
 
 2. **載入擴充功能**
    - 開啟 `chrome://extensions`
